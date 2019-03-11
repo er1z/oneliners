@@ -1,0 +1,1 @@
+docker exec -ti stack_myservice.1.$(docker service ps -f 'name=stack_myservice.1' stack_myservice -q --no-trunc | head -n1) /bin/bash
