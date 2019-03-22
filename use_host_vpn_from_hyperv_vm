@@ -1,1 +1,3 @@
 sudo route add -net 172.16.1.0 netmask 255.255.255.128 gw _gateway
+
+# Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters#IPEnableRouter=1
