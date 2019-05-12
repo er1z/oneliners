@@ -1,0 +1,13 @@
+[Unit]
+Description=Unison workspace
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=eriz
+ExecStart=/usr/local/bin/unison workspace
+
+[Install]
+WantedBy=multi-user.target
