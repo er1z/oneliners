@@ -1,0 +1,36 @@
+services:
+  portainer:
+    image: portainer/portainer
+    ports:
+#      - "9000:9000"
+#      - "8000:8000"
+    volumes:
+      - portainer_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - traefik
+    deploy:
+      mode: replicated
+      labels:
+        - "traefik.http.routers.portainer.rule=PathPrefix(`/portainer`)"
+        - "traefik.http.routers.portainer.middlewares=portainer3@docker,portainer2@docker,portainer@docker"
+        - "traefik.http.middlewares.portainer3.stripprefix.prefixes=/portainer"
+        - "traefik.http.middlewares.portainer2.redirectregex.regex=^(.*)/portainer$$"
+        - "traefik.http.middlewares.portainer2.redirectregex.replacement=$$1/portainer/"
+        - "traefik.http.middlewares.portainer.replacepathregex.regex=^/portainer/(.*)"
+        - "traefik.http.middlewares.portainer.replacepathregex.replacement=^/$$1"
+        - "traefik.http.routers.portainer.service=portainer"
+        - "traefik.http.services.portainer.loadbalancer.server.port=9000"
+        - "traefik.docker.network=traefik"
+        - "traefik.enable=true"
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+
+networks:
+  traefik:
+    name: traefik
+    external: true
+
+volumes:
+  portainer_data:
