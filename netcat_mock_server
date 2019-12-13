@@ -1,0 +1,2 @@
+# https://jameshfisher.com/2018/12/31/how-to-make-a-webserver-with-netcat-nc/
+while true; do cat index.http | nc -l 8000; done
