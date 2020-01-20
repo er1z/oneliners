@@ -1,0 +1,1 @@
+ssh-keygen -y -f ssh_key_file > ssh_key_file.pub
