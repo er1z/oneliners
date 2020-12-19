@@ -1,0 +1,1 @@
+portsnap extract /shells/zsh

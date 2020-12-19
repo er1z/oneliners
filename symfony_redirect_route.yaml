@@ -1,0 +1,6 @@
+root:
+  path: /articles
+    defaults:
+      _controller: FrameworkBundle:Redirect:redirect
+      route: new_route_name_articles_index
+      permanent: true

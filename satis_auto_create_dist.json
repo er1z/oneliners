@@ -1,0 +1,8 @@
+{
+  "archive": {
+    "directory": "dist",
+    "format": "tar",
+    "prefix-url": "http://your-satis-url.dev",
+    "skip-dev": true
+  }
+}

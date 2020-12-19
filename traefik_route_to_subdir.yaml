@@ -1,0 +1,3 @@
+- "traefik.frontend.redirect.regex=^(.*)/portainer$$"
+- "traefik.frontend.redirect.replacement=$$1/portainer/"
+- "traefik.frontend.rule=PathPrefix:/portainer;ReplacePathRegex: ^/portainer/(.*) /$$1"

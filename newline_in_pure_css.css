@@ -1,0 +1,4 @@
+selector:before{
+    content:"\A";
+    white-space: pre;
+}

@@ -1,0 +1,1 @@
+mysql> pager less;
