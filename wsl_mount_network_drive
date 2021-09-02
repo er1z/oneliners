@@ -1,0 +1,3 @@
+/etc/fstab
+
+M: /mnt/m drvfs defaults 0 0
