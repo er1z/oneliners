@@ -1,0 +1,4 @@
+# add in each file requiring CRD from currently installed dependency
+annotations:
+  "helm.sh/hook": post-install
+  "helm.sh/hook-weight": "99"
